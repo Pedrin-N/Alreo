@@ -12,7 +12,17 @@ A arquitetura do sistema conta com três módulos principais:
 
 Atualmente, existem ferramentas que interpretam álgebra relacional, auxiliam na correção sintática e permitem a visualização dos resultados das consultas. No entanto, muitas dessas ferramentas não estão disponíveis em formato web e requerem a instalação de um SGBD local, o que exige a instalação prévia de programas no computador. O **Alreo** oferece um ambiente virtual na web que retorna os resultados das consultas e proporciona uma interface simples para a criação e manipulação de consultas em um SGBD real.
 
-## Instruções de instalação
+## Executando com Docker (recomendado)
+
+Com o Docker instalado, na raiz do projeto:
+
+```bash
+docker compose up --build
+```
+
+Acesse http://localhost:5000. Não é preciso instalar Python nem editar o `sys.ini`. Detalhes em `docs/tcc/conteinerizacao.md`.
+
+## Instruções de instalação (sem Docker)
 
 ### Pré-requisitos
 
@@ -33,6 +43,8 @@ Atualmente, existem ferramentas que interpretam álgebra relacional, auxiliam na
    ```
 
 ## Configuração
+
+> **Nota (Alreo Web 2.0):** o `sys.ini` agora usa o caminho relativo `ralib/radb.ini`, então os passos abaixo não são mais necessários. Basta rodar `python app.py` a partir da raiz do projeto.
 
 ### Etapas de configuração
 

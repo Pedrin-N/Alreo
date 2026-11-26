@@ -1,0 +1,17 @@
+# Ambiente de desenvolvimento do Alreo.
+# Uso: docker compose up --build  ->  http://localhost:5000
+services:
+  alreo:
+    build: .
+    image: alreo:dev
+    ports:
+      - "5000:5000"
+    volumes:
+      # Código montado no container: alterações no host recarregam o Flask (hot-reload).
+      - .:/app
+    environment:
+      ALREO_HOST: 0.0.0.0
+      ALREO_PORT: "5000"
+      ALREO_DEBUG: "1"
+    # Repassa sinais (Ctrl+C / docker compose stop) corretamente ao Python.
+    init: true

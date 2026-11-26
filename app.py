@@ -787,4 +787,10 @@ atexit.register(limpar_arquivos_session)
 atexit.register(clean_db_files)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Host/porta/debug configuráveis por variável de ambiente (necessário no Docker).
+    # Sem variáveis, o comportamento é o mesmo da v1.0: 127.0.0.1:5000 com debug.
+    app.run(
+        host=os.getenv('ALREO_HOST', '127.0.0.1'),
+        port=int(os.getenv('ALREO_PORT', '5000')),
+        debug=os.getenv('ALREO_DEBUG', '1') == '1',
+    )

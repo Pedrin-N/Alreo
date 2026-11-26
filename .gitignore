@@ -1,0 +1,12 @@
+# Ambiente Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Dados de execução (criados por sessão e apagados ao encerrar o app)
+flask_session/
+/*.db
+
+# Contexto acadêmico pessoal (dados do discente): mantido só localmente
+docs/tcc/CONTEXTO.md
